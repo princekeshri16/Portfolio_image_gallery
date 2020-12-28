@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio filter gallery</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <nav class="navigation">
+        <div class="list active home" data-filter="all">All</div>
+        <div class="list mobile" data-filter="Mobile">Mobile</div>
+        <div class="list camera" data-filter="Camera">Camera</div>
+        <div class="list watch" data-filter="Watch">Watch</div>
+        <div class="list shoes" data-filter="Shoe">Shoes</div>
+        <div class="list headphones" data-filter="Headphone">Headphone</div>
+    </nav>
+    <div class="container">
+            <div class="itembox Headphone"><img  src="images/headphone-1868612_1920.jpg" alt="headphones"></div>
+            <div class="itembox Camera"><img  src="images/camera-431119_1920.jpg" alt="camera"></div>
+            <div class="itembox Shoe"><img  src="images/shoe-1433925_1920.jpg" alt="shoes"></div>
+            <div class="itembox Watch"><img  src="images/smart-watch-889639_1280.jpg" alt="watch"></div>
+            <div class="itembox Mobile"><img  src="images/mobile-1726138_1920.jpg" alt="mobile"></div>
+            <div class="itembox Camera"><img  src="images/camera-514992_1920.jpg" alt="camera"></div>
+            <div class="itembox Shoe"><img  src="images/shoes-1638873_1920.jpg" alt="shoes"></div>
+            <div class="itembox Watch"><img  src="images/apple-2561475_1920.jpg" alt="watch"></div>
+            <div class="itembox Shoe"><img  src="images/shoes-584850_1920.jpg" alt="shoes"></div>
+            <div class="itembox Camera"><img  src="images/camera-813814_1920.jpg" alt="camera"></div>
+            <div class="itembox Headphone"><img  src="images/sound-5833737_1920.jpg" alt="headphones"></div>
+            <div class="itembox Mobile"><img  src="images/iphone-2854305_1920.png" alt="mobile"></div>
+            <div class="itembox Headphone"><img  src="images/black-1834689_1920.jpg" alt="headphones"></div>
+            <div class="itembox Shoe"><img  src="images/boot-250012_1920.jpg" alt="shoes"></div>
+            <div class="itembox Mobile"><img  src="images/mobile-phone-2104312_1920.jpg" alt="mobile"></div>
+            <div class="itembox Watch"><img  src="images/wristwatch-4812804_1920.jpg" alt="watch"></div>
+            <div class="itembox Mobile"><img  src="images/mobile-phone-2198770_1280.png" alt="mobile"></div>
+            <div class="itembox Headphone"><img  src="images/headphones-3683983_1920.jpg" alt="headphones"></div>
+            <div class="itembox Watch"><img  src="images/wristwatch-407096_1920.jpg" alt="watch"></div>
+            <div class="itembox Camera"><img  src="images/camera-820018_1920.jpg" alt="camera"></div>
+    </div>
+    <!-- </div> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+    $(document).ready(function()
+    {
+        $('.list').click(function()
+        {
+            const value = $(this).attr('data-filter');
+            if(value == 'all')
+            {
+                $('.itembox').show('1000');
+            }
+            else{
+                $('.itembox').not('.'+value).hide('1000');
+                $('.itembox').filter('.'+value).show('1000');
+
+            }
+        })
+        //add active class on selected item
+        $('.list').click(function()
+        {
+            $(this).addClass('active').siblings().removeClass('active');
+        })
+    })
+    </script>
+</body>
+</html>
